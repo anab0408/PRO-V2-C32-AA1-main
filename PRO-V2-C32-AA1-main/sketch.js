@@ -57,7 +57,7 @@ function preload()
   sad.looping= false;
   eat.looping = false; 
 
-//teste
+
 }
 
 function setup() {
@@ -70,10 +70,9 @@ function setup() {
   else{
     canW = windowWidth;
     canH = windowHeight;
-    createCanvas(windowWidth);
+    createCanvas(windowWidth, windowHeight);
   }
-  createCanvas(500,700);
-
+  
   frameRate(80);
 
   bk_song.play();
@@ -102,10 +101,11 @@ function setup() {
     blower.size(150, 100);
     blower.mouseClicked(airblow);
 
-    mute = createImg('mute.png');
-    mute.position(450,20);
-    mute.size(50,50);
-  
+    mute_btn = createImg('mute.png');
+    mute_btn.position(450,20);
+    mute_btn.size(50,50);
+    mute_btn.mouseClicked(mute);
+
   rope = new Rope(8,{x:40,y:30});
   rope2 = new Rope (7, {x: 370, y: 40});
   rope3 = new Rope (4, {x: 400, y: 225});
@@ -214,3 +214,11 @@ function airblow(){
   air_sound.play();
 }
 
+function mute (){
+  if(bk_song.isPlaying()){
+    bk_song.stop
+  }
+  else {
+    bk_song.play()
+  }
+}
