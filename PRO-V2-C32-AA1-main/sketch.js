@@ -216,7 +216,7 @@ function airblow(){
 
 function mute (){
   if(bk_song.isPlaying()){
-    bk_song.stop
+    bk_song.stop()
   }
   else {
     bk_song.play()
