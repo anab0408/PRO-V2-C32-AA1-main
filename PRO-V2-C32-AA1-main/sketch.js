@@ -57,7 +57,7 @@ function preload()
   sad.looping= false;
   eat.looping = false; 
 
-
+//teste
 }
 
 function setup() {
